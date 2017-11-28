@@ -14,6 +14,9 @@ $_config_data["new"] = array();
  $_config_data["new"]["sh_pull"] = "cd {$_config_data["test"]["dir"]} && /usr/bin/git pull"; //git pull 命令 更新代码必填
 ```
 
+###web server
+open_basedir路径相对于需要发布的项目路径更高一级，不然php无法判断跨范围文件是否存在
+
 ##On GitHub | GitLab | Bitbucket
 
 ### GitHub
