@@ -1,5 +1,6 @@
 <?php
 ini_set("display_errors", "On");
+set_time_limit(0);
 ini_set('open_basedir', '/');
 $_config = include_once __DIR__."/config.php";
 if (!isset($_GET['k']) && trim($_GET['k'])){
@@ -86,7 +87,7 @@ if (file_exists($config["dir"] . ".git") && is_dir($config["dir"])) {
     fwrite($fs, 'RESULT: '.print_r($result,true) .PHP_EOL);
     $fs and fclose($fs);
 }else{
-    mkdir($config["dir"],true);
+    mkdir($config["dir"],0755,true);
     fwrite($fs, 'INIT: '.PHP_EOL);
     fwrite($fs, '======================================================================='.PHP_EOL);
     echo exec($config['sh_clone'],$result);
